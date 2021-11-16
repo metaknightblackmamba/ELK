@@ -1,0 +1,26 @@
+- name: verify ES install folder
+  stat:
+    path: /tmp/elk/elasticsearch-{{ elasticsearch.version }}
+  register: path
+
+#- debug: display path var
+#      var: path
+
+- name: ansible create directory for ES app
+  file:
+    path: /tmp/elk
+    state: directory
+  when: not path.stat.exists
+
+- name: download elasticsearch 
+  shell: wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-{{ elasticsearch.version }}-linux-x86_64.tar.gz
+  when: not path.stat.exists
+
+- name: unzip ES package
+  shell: tar -xzvf elasticsearch-{{ elasticsearch.version }}-linux-x86_64.tar.gz -C /tmp/elk
+  when: not path.stat.exists
+
+- name: delete archive ES
+  shell: rm -rf elasticsearch-{{ elasticsearch.version }}-linux-x86_64.tar.gz*
+  when: not path.stat.exists
+

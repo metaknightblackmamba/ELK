@@ -1,0 +1,17 @@
+- name: create directory for metricbeat logs
+  file:
+    path: /tmp/elk/var/log/metricbeat
+    state: directory
+
+- name: create directory for metricbeat data
+  file:
+    path: /tmp/elk/var/data/metricbeat
+    state: directory
+
+- name: Copy config file metricbeat.yml
+  template:
+    src: "metricbeat.yml"
+    dest: "/tmp/elk/metricbeat-{{ metricbeat.version }}-linux-x86_64/metricbeat.yml"
+  
+#- name: fix read/write folder for all insa user :)...
+#  shell: chmod -R 767 /tmp/elk/

@@ -1,0 +1,22 @@
+elasticsearch:
+    version: 7.2.0
+    port: 9201
+
+kibana:
+    version: 7.2.0
+    port: 5602
+
+logstash:
+    version: 7.2.0
+
+heartbeat:
+    version: 7.2.0
+
+metricbeat:
+    version: 7.2.0
+
+httpbeat:
+    version: 4.1.0
+
+java:
+    jvm: 2g

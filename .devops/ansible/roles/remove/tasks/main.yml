@@ -1,0 +1,20 @@
+- name: delete screen ES session
+  shell: pkill screen
+  register: es
+  ignore_errors: yes
+
+- name: remove ELK folder
+  shell: rm -rf /tmp/elk
+  ignore_errors: yes
+
+- name: remove ELK cache
+  shell: rm -rf /tmp/elasticsearch-*
+  ignore_errors: yes
+
+- name: remove ELK hsperfdata
+  shell: rm -rf /tmp/hsperfdata_*
+  ignore_errors: yes
+
+- name: remove tmp folder
+  shell: rm -rf /tmp/*
+  ignore_errors: yes

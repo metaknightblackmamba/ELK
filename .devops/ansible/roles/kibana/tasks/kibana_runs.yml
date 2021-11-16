@@ -1,0 +1,10 @@
+- name: verify that Kibana don't run
+  shell: screen -X -S kibana_elk quit
+  register: kibana
+  ignore_errors: yes
+
+- debug:
+    var: kibana.rc
+
+- name: run kibana
+  shell: screen -S kibana_elk -d -m /tmp/elk/kibana-7.2.0-linux-x86_64/bin/kibana

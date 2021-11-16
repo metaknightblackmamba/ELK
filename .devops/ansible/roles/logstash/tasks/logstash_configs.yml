@@ -1,0 +1,27 @@
+- name: create directory for logstash logs
+  file:
+    path: /tmp/elk/var/log/logstash
+    state: directory
+
+- name: create directory for logstash data
+  file:
+    path: /tmp/elk/var/data/logstash
+    state: directory
+
+- name: Copy config file logstash.yml
+  template:
+    src: "logstash.yml"
+    dest: "/tmp/elk/logstash-{{ logstash.version }}/config/logstash.yml"
+
+- name: Copy config file jvm.options
+  template:
+    src: "jvm.options"
+    dest: "/tmp/elk/logstash-{{ logstash.version }}/config/jvm.options"
+
+- name: Copy config file logstash-sample.conf
+  template:
+    src: "logstash-sample.conf"
+    dest: "/tmp/elk/logstash-{{ logstash.version }}/config/logstash-sample.conf"
+  
+#- name: fix read/write folder for all insa user :)...
+#  shell: chmod -R 767 /tmp/elk/

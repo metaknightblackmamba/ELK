@@ -1,0 +1,4 @@
+- name: Copy config file kibana.yml
+  template:
+    src: "kibana.yml"
+    dest: "/tmp/elk/kibana-{{ kibana.version }}-linux-x86_64/config/kibana.yml"

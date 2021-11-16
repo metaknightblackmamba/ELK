@@ -1,0 +1,20 @@
+- name: verify Logstash install folder
+  stat:
+    path: /tmp/elk/logstash-{{ logstash.version }}
+  register: path
+
+#- debug: display path var
+#      var: path
+
+- name: download logstash 
+  shell: wget https://artifacts.elastic.co/downloads/logstash/logstash-{{ logstash.version }}.tar.gz
+  when: not path.stat.exists
+
+- name: unzip logstash package
+  shell: tar -xzvf logstash-{{ logstash.version }}.tar.gz -C /tmp/elk
+  when: not path.stat.exists
+
+- name: delete archive logstash
+  shell: rm -rf logstash-{{ logstash.version }}.tar.gz*
+  when: not path.stat.exists
+

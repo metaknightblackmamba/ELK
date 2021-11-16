@@ -1,0 +1,23 @@
+#- hosts: "nodes_master"
+#  roles:
+#  #  - elasticsearch
+#    - metricbeat
+#
+#- hosts: "nodes_worker"
+#  roles:
+#    - elasticsearch
+#    - metricbeat
+#
+#- hosts: "kibana"
+#  roles:
+#    - kibana
+#    - heartbeat
+#
+#- hosts: "elkh"
+#  roles:
+#    - logstash
+#    - httpbeat
+#
+#- hosts: "all"
+#  roles:
+#    - remove

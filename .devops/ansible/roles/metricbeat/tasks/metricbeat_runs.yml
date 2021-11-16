@@ -1,0 +1,10 @@
+- name: verify that metricbeat don't run
+  shell: screen -X -S metricbeat_elk quit
+  register: metricbeat
+  ignore_errors: yes
+
+- debug:
+    var: metricbeat.rc
+
+- name: run metricbeat
+  shell: screen -S metricbeat_elk -d -m /tmp/elk/metricbeat-7.2.0-linux-x86_64/metricbeat --path.config=/tmp/elk/metricbeat-7.2.0-linux-x86_64/

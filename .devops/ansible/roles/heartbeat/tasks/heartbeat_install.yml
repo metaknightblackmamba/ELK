@@ -1,0 +1,20 @@
+- name: verify heartbeat install folder
+  stat:
+    path: /tmp/elk/heartbeat-{{ heartbeat.version }}-linux-x86_64
+  register: path
+
+#- debug: display path var
+#      var: path
+
+- name: download heartbeat 
+  shell: wget https://artifacts.elastic.co/downloads/beats/heartbeat/heartbeat-{{ heartbeat.version}}-linux-x86_64.tar.gz
+  when: not path.stat.exists
+
+- name: unzip Heartbeat package
+  shell: tar -xzvf heartbeat-{{ heartbeat.version }}-linux-x86_64.tar.gz -C /tmp/elk
+  when: not path.stat.exists
+
+- name: delete archive heartbeat
+  shell: rm -rf heartbeat-{{ heartbeat.version }}-linux-x86_64.tar.gz*
+  when: not path.stat.exists
+

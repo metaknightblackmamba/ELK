@@ -1,0 +1,10 @@
+- name: verify that ES don't run
+  shell: screen -X -S elasticsearch_elk quit
+  register: es
+  ignore_errors: yes
+
+- debug:
+    var: es.rc
+
+- name: run elasticsearch
+  shell: screen -S elasticsearch_elk -d -m /tmp/elk/elasticsearch-7.2.0/bin/elasticsearch

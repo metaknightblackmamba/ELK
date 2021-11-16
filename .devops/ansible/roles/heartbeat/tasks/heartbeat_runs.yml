@@ -1,0 +1,10 @@
+- name: verify that Heaertbeat don't run
+  shell: screen -X -S heartbeat_elk quit
+  register: heartbeat
+  ignore_errors: yes
+
+- debug:
+    var: heartbeat.rc
+
+- name: run heartbeat
+  shell: screen -S heartbeat_elk -d -m /tmp/elk/heartbeat-7.2.0-linux-x86_64/heartbeat --path.config=/tmp/elk/heartbeat-7.2.0-linux-x86_64/

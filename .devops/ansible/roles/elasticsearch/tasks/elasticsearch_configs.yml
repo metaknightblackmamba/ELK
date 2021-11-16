@@ -1,0 +1,22 @@
+- name: create directory for ES logs
+  file:
+    path: /tmp/elk/var/log/elasticsearch
+    state: directory
+
+- name: create directory for ES data
+  file:
+    path: /tmp/elk/var/data/elasticsearch
+    state: directory
+
+- name: Copy config file elasticsearch.yml
+  template:
+    src: "elasticsearch.yml"
+    dest: "/tmp/elk/elasticsearch-{{ elasticsearch.version }}/config/elasticsearch.yml"
+
+- name: Copy config file jvm.options
+  template:
+    src: "jvm.options"
+    dest: "/tmp/elk/elasticsearch-{{ elasticsearch.version }}/config/jvm.options" 
+  
+#- name: fix read/write folder for all insa user :)...
+#  shell: chmod -R 767 /tmp/elk/

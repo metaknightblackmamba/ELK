@@ -1,0 +1,14 @@
+- name: create directory for heartbeat logs
+  file:
+    path: /tmp/elk/var/log/beat
+    state: directory
+
+- name: create directory for heartbeat data
+  file:
+    path: /tmp/elk/var/data/beat
+    state: directory
+
+- name: Copy config file heartbeat.yml
+  template:
+    src: "heartbeat.yml"
+    dest: "/tmp/elk/heartbeat-{{ heartbeat.version }}-linux-x86_64/heartbeat.yml"

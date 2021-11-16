@@ -1,0 +1,14 @@
+##               ##
+## Main playbook ##
+##  Test Hosts   ##
+- name: test ping host
+  ansible.builtin.ping:
+
+##                ##
+## Kibana section ##
+##                ##
+- include: kibana_install.yml
+- include: kibana_configs.yml
+- include: kibana_runs.yml
+
+

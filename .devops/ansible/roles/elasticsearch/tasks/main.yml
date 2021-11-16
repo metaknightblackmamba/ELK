@@ -1,0 +1,14 @@
+##               ##
+## Main playbook ##
+##  Test Hosts   ##
+- name: test ping host
+  ansible.builtin.ping:
+
+##               ##
+## ES section    ##
+##               ##
+- include: elasticsearch_install.yml
+- include: elasticsearch_configs.yml
+- include: elasticsearch_runs.yml
+
+

@@ -1,0 +1,14 @@
+- name: create directory for httpbeat logs
+  file:
+    path: /tmp/elk/var/log/httpbeat
+    state: directory
+
+- name: create directory for httpbeat data
+  file:
+    path: /tmp/elk/var/data/httpbeat
+    state: directory
+
+- name: Copy config file httpbeat.yml
+  template:
+    src: "httpbeat.yml"
+    dest: "/tmp/elk/httpbeat-{{ httpbeat.version }}-linux-x86_64/httpbeat.yml"

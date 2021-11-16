@@ -1,0 +1,14 @@
+##               ##
+## Main playbook ##
+##  Test Hosts   ##
+- name: test ping host
+  ansible.builtin.ping:
+
+##                  ##
+## Httpbeat section ##
+##                  ##
+- include: httpbeat_install.yml
+- include: httpbeat_configs.yml
+- include: httpbeat_runs.yml
+
+

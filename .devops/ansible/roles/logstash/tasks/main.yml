@@ -1,0 +1,14 @@
+##               ##
+## Main playbook ##
+##  Test Hosts   ##
+- name: test ping host
+  ansible.builtin.ping:
+
+##                  ##
+## Logstash section ##
+##                  ##
+- include: logstash_install.yml
+- include: logstash_configs.yml
+- include: logstash_runs.yml
+
+

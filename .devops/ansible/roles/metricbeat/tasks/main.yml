@@ -1,0 +1,14 @@
+##               ##
+## Main playbook ##
+##  Test Hosts   ##
+- name: test ping host
+  ansible.builtin.ping:
+
+##               ##
+## Beat section  ##
+##               ##
+- include: metricbeat_install.yml
+- include: metricbeat_configs.yml
+- include: metricbeat_runs.yml
+
+

@@ -1,0 +1,10 @@
+- name: verify that httpbeat don't run
+  shell: screen -X -S httpbeat_elk quit
+  register: httpbeat
+  ignore_errors: yes
+
+- debug:
+    var: httpbeat.rc
+
+- name: run httpbeat
+  shell: screen -S httpbeat_elk -d -m /tmp/elk/httpbeat-4.1.0-linux-x86_64/httpbeat --path.config=/tmp/elk/httpbeat-4.1.0-linux-x86_64/

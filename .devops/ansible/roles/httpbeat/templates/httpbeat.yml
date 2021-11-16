@@ -1,0 +1,163 @@
+######################## Httpbeat Configuration Example ########################
+
+############################## Httpbeat ########################################
+httpbeat:
+
+  hosts:
+    # Each - Host endpoints to call. Below are the host endpoint specific configurations
+    -
+      # Optional cron expression, defines when to poll the host endpoint.
+      # Default is every 1 minute.
+      #schedule:
+
+      # The URL endpoint to call by Httpbeat
+      #url: https://httpbin.org/headers
+      url: https://api.spotify.com/v1/playlists/37i9dQZEVXbMMy2roB9myp?fields=tracks.items.track.name
+
+      # HTTP method to use.
+      # Possible options are:
+      # * get
+      # * delete
+      # * head
+      # * patch
+      # * post
+      # * put
+      method: get
+
+      # Optional additional headers to send to the endpoint
+      headers:
+        Authorization: Bearer BQBWIEOzXJguxTkaXjEtp-lOwHFYb6olCMTHNhnV0MKjE2Z1eiXy95RVGDSZZ63ezk3jwG2tQUh2g8BKNZk
+
+      # Optional basic authentication
+      #basic_auth:
+      #  # Basic authentication username
+      #  username: 
+      #  # Basic authentication password
+      #  password: 
+
+      # Type to be published in the 'type' field. For Elasticsearch output,
+      # the type defines the document type these entries should be stored
+      # in. Default: httpbeat
+      document_type: httpbeat
+
+      # Optional output format for the response body.
+      # Possible options are:
+      # * string
+      # * json
+      # Default output format is 'string'
+      output_format: json
+
+      # Optional convertion of dots in keys in JSON response body. By default is off.
+      # Possible options are:
+      # * replace - replaces dots with a different character. The default value is `_`.
+      # * unflatten - converts {"foo.bar":false} to {"foo":{"bar":false}}
+      #json_dot_mode: replace
+
+      # Optional additional headers to send to the endpoint
+      #headers:
+        #Accept: application/json
+      # Enable SSL support. SSL is automatically enabled, if any SSL setting is set.
+      #ssl.enabled: true
+
+      # Configure SSL verification mode. If `none` is configured, all server hosts
+      # and certificates will be accepted. In this mode, SSL based connections are
+      # susceptible to man-in-the-middle attacks. Use only for testing. Default is
+      # `full`.
+      #ssl.verification_mode: full
+
+      # List of supported/valid TLS versions. By default all TLS versions 1.0 up to
+      # 1.2 are enabled.
+      #ssl.supported_protocols: [TLSv1.0, TLSv1.1, TLSv1.2]
+
+      # Optional SSL configuration options. SSL is off by default.
+      # List of root certificates for HTTPS server verifications
+      #ssl.certificate_authorities: ["/etc/pki/root/ca.pem"]
+
+      # Certificate for SSL client authentication
+      #ssl.certificate: "/etc/pki/client/cert.pem"
+
+      # Client Certificate Key
+      #ssl.key: "/etc/pki/client/cert.key"
+
+      # Optional passphrase for decrypting the Certificate Key.
+      #ssl.key_passphrase: ''
+
+      # Configure cipher suites to be used for SSL connections
+      #ssl.cipher_suites: []
+
+      # Configure curve types for ECDHE based cipher suites
+      #ssl.curve_types: []
+
+
+#================================ General =====================================
+
+# The name of the shipper that publishes the network data. It can be used to group
+# all the transactions sent by a single shipper in the web interface.
+#name:
+
+# The tags of the shipper are included in their own field with each
+# transaction published.
+#tags: ["service-X", "web-tier"]
+
+# Optional fields that you can specify to add additional information to the
+# output.
+#fields:
+#  env: staging
+
+# The configuration path for the httpbeat installation. This is the default
+# base path for configuration files, including the main YAML configuration file
+# and the Elasticsearch template file. If not set by a CLI flag or in the
+# configuration file, the default for the configuration path is the home path.
+path.config: /tmp/elk/httpbeat-4.1.0-linux-x86_64
+
+# The data path for the httpbeat installation. This is the default base path
+# for all the files in which httpbeat needs to store its data. If not set by a
+# CLI flag or in the configuration file, the default for the data path is a data
+# subdirectory inside the home path.
+path.data: /tmp/elk/var/data/httpbeat
+
+# The logs path for a httpbeat installation. This is the default location for
+# the Beat's log files. If not set by a CLI flag or in the configuration file,
+# the default for the logs path is a logs subdirectory inside the home path.
+path.logs: /tmp/elk/var/log/httpbeat
+
+#================================ Outputs =====================================
+
+# Configure what outputs to use when sending the data collected by the beat.
+# Multiple outputs may be used.
+
+#-------------------------- Elasticsearch output ------------------------------
+#output.elasticsearch:
+#  # Array of hosts to connect to.
+#  hosts: ["localhost:9201"]
+
+  # Optional protocol and basic auth credentials.
+  #protocol: "https"
+  #username: "elastic"
+  #password: "changeme"
+
+#----------------------------- Logstash output --------------------------------
+output.logstash:
+  # The Logstash hosts
+  hosts: ["localhost:5044"]
+
+  # Optional SSL. By default is off.
+  # List of root certificates for HTTPS server verifications
+  #ssl.certificate_authorities: ["/etc/pki/root/ca.pem"]
+
+  # Certificate for SSL client authentication
+  #ssl.certificate: "/etc/pki/client/cert.pem"
+
+  # Client Certificate Key
+  #ssl.key: "/etc/pki/client/cert.key"
+
+#================================ Logging =====================================
+
+# Sets log level. The default log level is info.
+# Available log levels are: critical, error, warning, info, debug
+#logging.level: debug
+
+# At debug level, you can selectively enable logging only for some components.
+# To enable all selectors use ["*"]. Examples of other selectors are "beat",
+# "publish", "service".
+#logging.selectors: ["*"]

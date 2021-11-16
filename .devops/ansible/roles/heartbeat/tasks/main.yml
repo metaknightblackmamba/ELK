@@ -1,0 +1,14 @@
+##               ##
+## Main playbook ##
+##  Test Hosts   ##
+- name: test ping host
+  ansible.builtin.ping:
+
+##                ##
+## Heartbeat section ##
+##                ##
+- include: heartbeat_install.yml
+- include: heartbeat_configs.yml
+- include: heartbeat_runs.yml
+
+

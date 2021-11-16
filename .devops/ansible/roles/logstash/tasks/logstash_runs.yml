@@ -1,0 +1,10 @@
+- name: verify that logstash don't run
+  shell: screen -X -S logstash_elk quit
+  register: logstash
+  ignore_errors: yes
+
+- debug:
+    var: logstash.rc
+
+- name: run logstash
+  shell: screen -S logstash_elk -d -m /tmp/elk/logstash-7.2.0/bin/logstash -f /tmp/elk/logstash-7.2.0/config/logstash-sample.conf 

@@ -1,0 +1,46 @@
+#give your cluster a name.
+cluster.name: es_cluster
+
+#give your nodes a name (change node number from node to node).
+node.name: "{{ ansible_host }}"
+
+#verify if the host is a master or not
+{% if ansible_host in groups['nodes_master'] %}
+node.master: true
+{% else %}
+node.master: false
+{% endif %}
+
+#define as data nodes:
+node.data: true
+
+# Set the number of shards (splits) of an index (5 by default):
+#
+#index.number_of_shards: 5
+
+# Set the number of replicas (additional copies) of an index (1 by default):
+#
+#index.number_of_replicas: 2
+
+#disable swap recommended if elasticsearch is running as service
+#bootstrap.mlockall: true
+
+# Path to directory where to store the data (separate multiple locations by comma):
+path.data: /tmp/elk/var/data/elasticsearch
+
+# Path to log files:
+path.logs: /tmp/elk/var/log/elasticsearch
+
+#enter the private IP and port of your node:
+#network.host: {{ ansible_enp0s31f6.ipv4.address }}
+network.host: 0.0.0.0
+http.port: {{ elasticsearch.port }}
+
+#number of initial master
+cluster.initial_master_nodes: ["134.214.202.26", "134.214.202.27","134.214.202.28","134.214.202.29","134.214.202.30"]
+
+#number of master nodes
+discovery.zen.minimum_master_nodes: 3
+
+#detail the private IPs of your nodes:
+discovery.zen.ping.unicast.hosts: ["134.214.202.26", "134.214.202.27","134.214.202.28","134.214.202.29","134.214.202.30","134.214.202.31","134.214.202.32","134.214.202.33","134.214.202.34","134.214.202.35","134.214.202.36","134.214.202.37","134.214.202.38","134.214.202.39","134.214.202.40"]

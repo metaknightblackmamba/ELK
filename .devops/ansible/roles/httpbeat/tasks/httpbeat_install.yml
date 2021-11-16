@@ -1,0 +1,20 @@
+- name: verify httpbeat install folder
+  stat:
+    path: /tmp/elk/httpbeat-{{ httpbeat.version }}-linux-x86_64
+  register: path
+
+#- debug: display path var
+#      var: path
+
+- name: download httpbeat 
+  shell: wget https://github.com/christiangalsterer/httpbeat/releases/download/{{ httpbeat.version }}/httpbeat-{{ httpbeat.version }}-linux-x86_64.tar.gz
+  when: not path.stat.exists
+
+- name: unzip httpbeat package
+  shell: tar -xzvf httpbeat-{{ httpbeat.version }}-linux-x86_64.tar.gz -C /tmp/elk
+  when: not path.stat.exists
+
+- name: delete archive httpbeat
+  shell: rm -rf httpbeat-{{ httpbeat.version }}-linux-x86_64.tar.gz*
+  when: not path.stat.exists
+
