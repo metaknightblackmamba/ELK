@@ -56,17 +56,13 @@ Host *
 
 Host tc405-112-01.insa-lyon.fr
     User <YOUR_USERNAME>
-    LocalForward 9201 localhost:9201
     LocalForward 5602 localhost:5602
 Host tc405-112-02.insa-lyon.fr
     User <YOUR_USERNAME>
-    LocalForward 5044 localhost:5044
 Host tc405-112-03.insa-lyon.fr
     User <YOUR_USERNAME>
-    LocalForward 5044 localhost:5044
 Host tc405-112-04.insa-lyon.fr
     User <YOUR_USERNAME>
-    LocalForward 5044 localhost:5044
 Host tc405-112-05.insa-lyon.fr
     User <YOUR_USERNAME>
 Host tc405-112-06.insa-lyon.fr

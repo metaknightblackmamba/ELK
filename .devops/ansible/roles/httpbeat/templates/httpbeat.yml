@@ -12,7 +12,8 @@ httpbeat:
 
       # The URL endpoint to call by Httpbeat
       #url: https://httpbin.org/headers
-      url: https://api.kraken.com/0/public/Trades?pair=BTCUSD
+      url: https://api.kraken.com/0/public/Assets
+      #url: https://api.kraken.com/0/public/Trades?pair=XBTUSD
       # HTTP method to use.
       # Possible options are:
       # * get
