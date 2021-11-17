@@ -12,8 +12,7 @@ httpbeat:
 
       # The URL endpoint to call by Httpbeat
       #url: https://httpbin.org/headers
-      url: https://api.spotify.com/v1/playlists/37i9dQZEVXbMMy2roB9myp?fields=tracks.items.track.name
-
+      url: https://api.kraken.com/0/public/Trades?pair=BTCUSD
       # HTTP method to use.
       # Possible options are:
       # * get
@@ -26,7 +25,9 @@ httpbeat:
 
       # Optional additional headers to send to the endpoint
       headers:
-        Authorization: Bearer BQBWIEOzXJguxTkaXjEtp-lOwHFYb6olCMTHNhnV0MKjE2Z1eiXy95RVGDSZZ63ezk3jwG2tQUh2g8BKNZk
+        User-Agent: Go-http-client/1.1
+        #Content-Type: application/x-www-form-urlencoded
+        #Authorization: Bearer BQBWIEOzXJguxTkaXjEtp-lOwHFYb6olCMTHNhnV0MKjE2Z1eiXy95RVGDSZZ63ezk3jwG2tQUh2g8BKNZk
 
       # Optional basic authentication
       #basic_auth:
