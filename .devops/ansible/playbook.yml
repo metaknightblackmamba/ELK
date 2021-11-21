@@ -1,6 +1,6 @@
 #- hosts: "nodes_master"
 #  roles:
-#  #  - elasticsearch
+#    - elasticsearch
 #    - metricbeat
 #
 #- hosts: "nodes_worker"
