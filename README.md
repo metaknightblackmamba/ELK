@@ -9,25 +9,25 @@ The ELK Stack is an acronym for a combination of three widely used open source p
 Elastic cluster is deployed on INFO-TD-E room :
 
 ```
-|-------------------------------------------------------------------------------------------------------------------|
-|tc405-112-01.insa-lyon.fr |  134.214.202.26  | (MASTER NODE) |  (DATA NODE) |   (KIBANA NODE)   | (HEARTBEAT NODE) |
-|--------------------------|------------------|---------------|--------------|-------------------|------------------|
-|tc405-112-02.insa-lyon.fr |  134.214.202.27  | (MASTER NODE) |  (DATA NODE) |                   |                  |
-|tc405-112-03.insa-lyon.fr |  134.214.202.28  | (MASTER NODE) |  (DATA NODE) |                   |                  |
-|tc405-112-04.insa-lyon.fr |  134.214.202.29  | (MASTER NODE) |  (DATA NODE) |                   |                  |
-|tc405-112-05.insa-lyon.fr |  134.214.202.30  | (MASTER NODE) |  (DATA NODE) |                   |                  |
-|--------------------------|------------------|---------------|--------------|-------------------|------------------|
-|tc405-112-06.insa-lyon.fr |  134.214.202.31  | (WORKER NODE) |  (DATA NODE) |                   |                  |
-|tc405-112-07.insa-lyon.fr |  134.214.202.32  | (WORKER NODE) |  (DATA NODE) |                   |                  |
-|tc405-112-08.insa-lyon.fr |  134.214.202.33  | (WORKER NODE) |  (DATA NODE) |                   |                  |
-|tc405-112-09.insa-lyon.fr |  134.214.202.34  | (WORKER NODE) |  (DATA NODE) |                   |                  |
-|tc405-112-10.insa-lyon.fr |  134.214.202.35  | (WORKER NODE) |  (DATA NODE) |                   |                  |
-|tc405-112-11.insa-lyon.fr |  134.214.202.36  | (WORKER NODE) |  (DATA NODE) |                   |                  |
-|tc405-112-12.insa-lyon.fr |  134.214.202.37  | (WORKER NODE) |  (DATA NODE) |                   |                  |
-|tc405-112-13.insa-lyon.fr |  134.214.202.38  | (WORKER NODE) |  (DATA NODE) |                   |                  |
-|tc405-112-14.insa-lyon.fr |  134.214.202.39  | (WORKER NODE) |  (DATA NODE) |                   |                  |
-|tc405-112-15.insa-lyon.fr |  134.214.202.40  | (WORKER NODE) |  (DATA NODE) |                   |                  |
-|-------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------------------------|
+|tc405-112-01.insa-lyon.fr |  134.214.202.26  | (MASTER NODE) |  (DATA NODE) |   (METRICBEAT)    |  (KIBANA NODE)   | (HEARTBEAT NODE) |
+|--------------------------|------------------|---------------|--------------|-------------------|------------------|------------------|
+|tc405-112-02.insa-lyon.fr |  134.214.202.27  | (MASTER NODE) |  (DATA NODE) |   (METRICBEAT)    |                  |                  |
+|tc405-112-03.insa-lyon.fr |  134.214.202.28  | (MASTER NODE) |  (DATA NODE) |   (METRICBEAT)    |                  |                  |
+|tc405-112-04.insa-lyon.fr |  134.214.202.29  | (MASTER NODE) |  (DATA NODE) |   (METRICBEAT)    |                  |                  |
+|tc405-112-05.insa-lyon.fr |  134.214.202.30  | (MASTER NODE) |  (DATA NODE) |   (METRICBEAT)    |                  |                  |
+|--------------------------|------------------|---------------|--------------|-------------------|------------------|------------------|
+|tc405-112-06.insa-lyon.fr |  134.214.202.31  | (WORKER NODE) |  (DATA NODE) |   (METRICBEAT)    |                  |                  |
+|tc405-112-07.insa-lyon.fr |  134.214.202.32  | (WORKER NODE) |  (DATA NODE) |   (METRICBEAT)    |                  |                  |
+|tc405-112-08.insa-lyon.fr |  134.214.202.33  | (WORKER NODE) |  (DATA NODE) |   (METRICBEAT)    |                  |                  |
+|tc405-112-09.insa-lyon.fr |  134.214.202.34  | (WORKER NODE) |  (DATA NODE) |   (METRICBEAT)    |                  |                  |
+|tc405-112-10.insa-lyon.fr |  134.214.202.35  | (WORKER NODE) |  (DATA NODE) |   (METRICBEAT)    |                  |                  |
+|tc405-112-11.insa-lyon.fr |  134.214.202.36  | (WORKER NODE) |  (DATA NODE) |   (METRICBEAT)    |                  |                  |
+|tc405-112-12.insa-lyon.fr |  134.214.202.37  | (WORKER NODE) |  (DATA NODE) |   (METRICBEAT)    |                  |                  |
+|tc405-112-13.insa-lyon.fr |  134.214.202.38  | (WORKER NODE) |  (DATA NODE) |   (METRICBEAT)    |                  |                  |
+|tc405-112-14.insa-lyon.fr |  134.214.202.39  | (WORKER NODE) |  (DATA NODE) |   (METRICBEAT)    |                  |                  |
+|tc405-112-15.insa-lyon.fr |  134.214.202.40  | (WORKER NODE) |  (DATA NODE) |   (METRICBEAT)    |                  |                  |
+|--------------------------------------------------------------------------------------------------------------------------------------|
 ```
 
 # MUST Have #
