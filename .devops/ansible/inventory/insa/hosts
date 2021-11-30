@@ -4,14 +4,14 @@ tc405-112-02.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/
 tc405-112-03.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
 tc405-112-04.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
 tc405-112-05.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
+tc405-112-10.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
+tc405-112-11.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
 
 [nodes_worker]
 tc405-112-06.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
 tc405-112-07.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
 tc405-112-08.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
 tc405-112-09.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
-tc405-112-10.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
-tc405-112-11.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
 tc405-112-12.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
 tc405-112-13.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
 tc405-112-14.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3

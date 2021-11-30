@@ -40,7 +40,7 @@ network.host: 0.0.0.0
 http.port: {{ elasticsearch.port }}
 
 #number of initial master
-cluster.initial_master_nodes: ["134.214.202.26", "134.214.202.27","134.214.202.28","134.214.202.29","134.214.202.30"]
+cluster.initial_master_nodes: ["134.214.202.26", "134.214.202.27","134.214.202.28","134.214.202.29","134.214.202.30","134.214.202.35","134.214.202.36"]
 
 #number of master nodes
 discovery.zen.minimum_master_nodes: 3
