@@ -34,6 +34,9 @@ path.data: /tmp/elk/var/data/elasticsearch
 # Path to log files:
 path.logs: /tmp/elk/var/log/elasticsearch
 
+# Path to snapshots folder
+path.repo: /home/fbonnafond/elk/snapshots
+
 #enter the private IP and port of your node:
 #network.host: {{ ansible_enp0s31f6.ipv4.address }}
 network.host: 0.0.0.0

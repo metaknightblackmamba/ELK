@@ -21,6 +21,7 @@ tc405-112-15.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/
 tc405-112-01.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
 
 [elkh]
-tc405-112-02.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
-tc405-112-03.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
-tc405-112-04.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
+#tc405-112-02.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
+#tc405-112-03.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
+#tc405-112-04.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3
+tc405-112-08.insa-lyon.fr   ansible_connection=ssh  ansible_python_interpreter=/usr/bin/python3

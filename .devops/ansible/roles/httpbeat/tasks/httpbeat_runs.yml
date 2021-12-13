@@ -1,10 +1,28 @@
-- name: verify that httpbeat don't run
-  shell: screen -X -S httpbeat_elk quit
-  register: httpbeat
+- name: verify that httpbeat token index don't run
+  shell: screen -X -S httpbeat_elk_token quit
+  register: httpbeat_token
+  ignore_errors: yes
+
+- name: verify that httpbeat artist index don't run
+  shell: screen -X -S httpbeat_elk_artist quit
+  register: httpbeat_artist
+  ignore_errors: yes
+
+- name: verify that httpbeat playlist index don't run
+  shell: screen -X -S httpbeat_elk_playlist quit
+  register: httpbeat_playlist
   ignore_errors: yes
 
 - debug:
-    var: httpbeat.rc
+    var: httpbeat_artist.rc
+- debug:
+    var: httpbeat_playlist.rc
+- debug:
+    var: httpbeat_token.rc
 
-- name: run httpbeat
-  shell: screen -S httpbeat_elk -d -m /tmp/elk/httpbeat-4.1.0-linux-x86_64/httpbeat --path.config=/tmp/elk/httpbeat-4.1.0-linux-x86_64/
+##- name: run httpbeat playlist index
+##  shell: screen -S httpbeat_elk_playlist -d -m /tmp/elk/httpbeat/httpbeat -c /tmp/elk/httpbeat/httpbeat_playlist.yaml -e -d "*" >> /tmp/elk/var/log/httpbeat/playlist.log
+##  # ./httpbeat -c httpbeat.yml -e -d "*" >> test.log
+
+#- name: run httpbeat
+#  shell: screen -S httpbeat_elk -d -m /tmp/elk/httpbeat-4.1.0-linux-x86_64/httpbeat --path.config=/tmp/elk/httpbeat-4.1.0-linux-x86_64/
